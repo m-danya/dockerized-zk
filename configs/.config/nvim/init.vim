@@ -1,51 +1,33 @@
-" Номера строк
 " set number
 set nonu
-" Автосохранение буферов файлов при открытии через args
 set autowrite
 
-" Открытие новых файлов справа, а не слева.
-""set splitbelow
 set splitright
 
-" Табы
 set tabstop=4
 set shiftwidth=4
 set smarttab
 set expandtab
 set smartindent
 
-" Перенос длинных строк
 set wrap
 
-" Автоотступ для новых строк и отступы в стиле Си
 set ai
 set cin
 
-" Подсветка при поиске + скобок
 set showmatch
 set hlsearch
 set incsearch
 set ignorecase
 
-" При вставке сохраняются отступы
-""set pastetoggle=
-""set paste
-
-
-" Подсветка синтаксиса
 syntax on
 
-" Копировать в системный буфер ВСЁ
+" Copy all stuff to the system clipboard (dd, yy, etc)
 set clipboard+=unnamedplus
 
-" Поиск без учета регистра
 set ic
 
-
 nnoremap <F3> :noh<cr>
-""nnoremap <F4> :make!<cr>
-""nnoremap <F5> :make! run<cr>
 
 nnoremap N :lnext<cr>
 nnoremap B :lprevious<cr>
@@ -53,7 +35,6 @@ nnoremap <C-N> :lopen<cr>
 
 com! FormatJSON %!python3 -m json.tool
 
-"" Подсветка скобочек другим цветом
 hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
 
 set timeoutlen=1000
