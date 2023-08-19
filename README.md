@@ -4,7 +4,7 @@ Dockerized minimalistic Zettelkasten system.
 
 I took [these bash scripts](https://gist.github.com/benevidesh/d78f7681120a13d5386ea55b39d82c9b) `zn` and `zs` and wrapped them into Docker image to freeze all the configs and to extend the pipeline with automatic notes syncronization with `git`.
 
-## How to use
+## How to install
 
 **Prerequisites**: Docker
 
@@ -22,3 +22,7 @@ This directory will contain all your Zettelkasten data and will be bind mounted 
 2. Clone the repo, build docker image with `./build.sh`, run `cp zk ~/.local/bin` to "install" the script.
 
 After reloading the shell, you can use `zk` to enter your Zettelkasten.
+
+## How to use
+
+TBD. Run `zk` to enter the system, then use `zn` and `zs`, see [these instructions](https://gist.github.com/benevidesh/d78f7681120a13d5386ea55b39d82c9b).
