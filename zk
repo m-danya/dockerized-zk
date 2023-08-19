@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Enable bash "strict mode"
+set -euo pipefail
+IFS=$'\n\t'
+
+cd $ZK_NOTES
+git pull --rebase
+
+xhost + > /dev/null # for xclip clipboard support
+docker run \
+    --rm -it \ # remove container data after executing
+    -v $ZK_NOTES:/zk \ # mount zk data files
+    --hostname vim-zk \
+    -e DISPLAY=$DISPLAY \ # also for xclip
+    -v /tmp/.X11-unix:/tmp/.X11-unix vim-zk # also for xclip
+xhost - > /dev/null # also for xclip
+
+# Sync Zettelkasten data after user exited the zk system
+git add .
+git commit -m "Auto sync" || true
+git push
+cd -
+
+# "strict mode" will stop script before this line if something goes wrong
+echo Successfully synced.

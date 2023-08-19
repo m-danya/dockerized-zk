@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+
+# origin: https://gist.github.com/benevidesh/d78f7681120a13d5386ea55b39d82c9b
+#
+# zn - as zettell
+# new export variables EDITOR for your editor and 
+#+ NOTES for your notes folder.
+
+main () {
+    note_id=$(date +%Y%m%d%H%M%S)
+    $EDITOR $NOTES/"$note_id".md
+}
+
+main
