@@ -2,8 +2,8 @@ FROM ubuntu:22.04
 
 # 1. Install packages as root
 
-RUN apt update
-RUN apt install neovim git fzf xclip bat curl tmux -y
+RUN apt-get update
+RUN apt-get install neovim git fzf xclip bat curl tmux -y
 RUN ln -s /usr/bin/batcat /usr/bin/bat
 
 # 2. Install scripts

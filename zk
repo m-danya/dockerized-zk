@@ -8,12 +8,15 @@ cd $ZK_NOTES
 git pull --rebase
 
 xhost + > /dev/null # for xclip clipboard support
+
+# --rm: remove container data after executing
+# -v: mount zk data files
 docker run \
-    --rm -it \ # remove container data after executing
-    -v $ZK_NOTES:/zk \ # mount zk data files
+    --rm -it \
+    -v $ZK_NOTES:/zk \
     --hostname vim-zk \
-    -e DISPLAY=$DISPLAY \ # also for xclip
-    -v /tmp/.X11-unix:/tmp/.X11-unix vim-zk # also for xclip
+    -e DISPLAY=$DISPLAY \
+    -v /tmp/.X11-unix:/tmp/.X11-unix vim-zk
 xhost - > /dev/null # also for xclip
 
 # Sync Zettelkasten data after user exited the zk system

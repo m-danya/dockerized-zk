@@ -21,7 +21,7 @@ This directory will contain all your Zettelkasten data and will be bind mounted 
 
 2. Clone the repo, build docker image with `./build.sh`, run `cp zk ~/.local/bin` to "install" the script.
 
-After reloading the shell, you can use `zk` to enter your Zettelkasten.
+Now you can use `zk` to enter your Zettelkasten.
 
 ## How to use
 
